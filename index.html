@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Tachyons link -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <!-- My styleSheet -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Font family -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Log in</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <a href="https://tableready.net/">
+        <img src="images/logo.png" class="rounded mx-auto d-block" alt="TablesReady Waitlist App logo" >
+      </a>
+      <h4>Log in to your account</h4>
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+          <label for="Email">Email</label>
+          <input type="email" name="Email" class="form-control" placeholder="E-mail" required>
+          <div class="invalid-feedback">
+            Please enter email in the correct format.
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="pass">Password</label>
+          <input type="password" name="pass" class="form-control" placeholder="Password" required>
+          <div class="invalid-feedback">
+            Please choose your password.
+          </div>
+        </div>
+        <div class="form-row">
+          <button type="submit" class="">Log in</button>
+        </div>
+      </form>
+      <div class="d-flex">
+          <a href="signup.html" class="col-md-6">Create an account</a>
+          <a href="" class="col-md-6 d-flex justify-content-end">Forgot password?</a>
+      </div>
+
+      <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+      </script>
+    </div><!--class = container -->
+  </body>
+</html>
