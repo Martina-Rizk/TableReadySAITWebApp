@@ -1,0 +1,80 @@
+doctype html
+head
+  meta(charset='utf-8')
+  // Bootstrap stylesheet
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
+  // Tachyons link
+  link(rel='stylesheet' href='https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css')
+  // My styleSheet
+  link(rel='stylesheet' type='text/css' href='signup.css')
+  // Font family
+  // <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+  link(href='https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap' rel='stylesheet')
+  title sign up
+.container
+  a(href='https://tableready.net/')
+    img.rounded.mx-auto.d-block(src='images/logo.png' alt='TablesReady Waitlist App logo')
+  h4 Create your account
+  form.needs-validation(novalidate='')
+    .form-row
+      .col-md-6
+        label(for='fname') First Name
+        input.form-control(type='text' name='fname' placeholder='' required='')
+        .invalid-feedback
+          | First Name is required
+      .col-md-6
+        label(for='lname') Last Name
+        input.form-control(type='text' name='lname' placeholder='' required='')
+        .invalid-feedback
+          | Last Name is required
+    .form-row
+      .col-md-6
+        label(for='Email') Email
+        input.form-control(type='email' name='Email' placeholder='' required='')
+        .invalid-feedback
+          | Please enter email in the correct format
+      .col-md-6
+        label(for='pass') Password
+        input.form-control(type='password' name='pass' placeholder='' required='')
+        .invalid-feedback
+          | Please choose your password
+    .form-row
+      .col-md-4
+        label(for='city') City
+        input.form-control(type='text' name='city' placeholder='' required='')
+        .invalid-feedback
+          | First Name is required
+      .col-md-4
+        label(for='state') State
+        input.form-control(type='text' name='state' placeholder='' required='')
+        .invalid-feedback
+          | Last Name is required
+      .col-md-4
+        label(for='zip') Zip
+        input.form-control(type='text' name='zip' placeholder='' required='')
+        .invalid-feedback
+          | Last Name is required
+    .form-row
+      button(type='submit') Sign up
+  .d-flex.justify-content-center
+    a(href='index.html') Back to Login
+  script.
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+    form.addEventListener('submit', function(event) {
+    if (form.checkValidity() === false) {
+    event.preventDefault();
+    event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+    }, false);
+    });
+    }, false);
+    })();
+// class = container
