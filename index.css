@@ -61,9 +61,15 @@ h4{
 a{
   padding-bottom: 10px;
 }
-.container{
+.loging{
   margin: auto;
   border-radius: 15px;
   background-color: white;
   width: 350px;
+}
+.signing{
+  margin: auto;
+  border-radius: 15px;
+  background-color: white;
+  max-width: 550px;
 }
