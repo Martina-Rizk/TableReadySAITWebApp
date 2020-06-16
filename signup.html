@@ -13,37 +13,25 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
     <title>sign up</title>
-    <script>
-      function validateEmail(emailField){
-          var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-          if (reg.test(emailField) == false)
-          {
-              alert('Invalid Email Address');
-              return false;
-          }
-          return true;
-      }
-    </script>
   </head>
   <body>
     <div class="container signing">
       <a href="https://tableready.net/">
-        <img src="images/logo.png" class="rounded mx-auto d-block" alt="TablesReady Waitlist App logo" >
+        <img src="logo.png" class="rounded mx-auto d-block" alt="TablesReady Waitlist App logo" >
       </a>
       <h4>Create your account</h4>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" method="POST" action="/create-post" novalidate>
         <div class="form-row">
           <div class="col-md-6">
             <label for="fname">First Name</label>
-            <input type="text" name="fname" class="form-control" required>
+            <input type="text" name="fname" class="form-control" placeholder="" required>
             <div class="invalid-feedback">
               First Name is required
             </div>
           </div>
           <div class="col-md-6">
             <label for="lname">Last Name</label>
-            <input type="text" name="lname" class="form-control" required>
+            <input type="text" name="lname" class="form-control" placeholder="" required>
             <div class="invalid-feedback">
               Last Name is required
             </div>
@@ -52,46 +40,50 @@
         <div class="form-row">
           <div class="col-md-6">
             <label for="Email">Email</label>
-            <input type="email" name="Email" class="form-control" required>
+            <input type="email" name="Email" class="form-control" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
             <div class="invalid-feedback">
               Please enter email in the correct format
             </div>
           </div>
           <div class="col-md-6">
             <label for="pass">Password</label>
-            <input type="password" name="pass" class="form-control" required>
+            <input type="password" name="pass" class="form-control" placeholder="" required>
             <div class="invalid-feedback">
               Please choose your password
             </div>
           </div>
-        </div>
+        </div> 
         <div class="form-row">
           <div class="col-md-4">
             <label for="city">City</label>
-            <input type="text" name="city" class="form-control" required>
+            <input type="text" name="city" class="form-control" placeholder="" required>
             <div class="invalid-feedback">
               First Name is required
             </div>
           </div>
           <div class="col-md-4">
             <label for="state">State</label>
-            <input type="text" name="state" class="form-control" required>
+            <input type="text" name="state" class="form-control" placeholder="" required>
             <div class="invalid-feedback">
               Last Name is required
             </div>
           </div>
           <div class="col-md-4">
             <label for="zip">Zip</label>
-            <input type="text" name="zip" class="form-control" required>
+            <input type="text" name="zip" class="form-control" placeholder="" required>
             <div class="invalid-feedback">
               Last Name is required
             </div>
           </div>
         </div>
         <div class="form-row">
-          <button type="submit" class="" onclick="validateEmail(Email.value);">Sign up</button>
+          <button type="submit" class="">Sign up</button>
         </div>
       </form>
+      <div class="d-flex justify-content-center">
+        <a href="index.html">Back to Login</a>
+      </div>
+
       <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
@@ -112,12 +104,6 @@
           }, false);
         })();
       </script>
-      <!-- <h4 style="text-align:center;">or</h4> -->
-      <!-- face book button -->
-      <div class="d-flex justify-content-center">
-        <a href="index.html">Back to Login</a>
-      </div>
     </div><!--class = container -->
-    <!-- <script type="text/javascript" src="emailExpression.js"></script> -->
   </body>
 </html>
