@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "5ee91e4a173a780cf404c30f"
+  },
+  "fname": "Mauricio",
+  "lname": "Rosas",
+  "Email": "mauro.a.rosas@gmail.com",
+  "pass": "jkyhglkj",
+  "city": "Calgary",
+  "state": "Alberta",
+  "zip": "T2R0L7"
+}]
