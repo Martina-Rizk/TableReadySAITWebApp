@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Tachyons link -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <!-- My styleSheet -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Font family -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+    <!-- Angular CDN for google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="angular\angular.js"></script>
+    <script src="angular-route\angular-route.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
+    <title>Log in</title>
+  </head>
+  <body ng-app="myApp" ng-controller="myController">
+    <div class="container loging">
+      <a href="https://tableready.net/">
+        <img src="logo.png" class="rounded mx-auto d-block" alt="TablesReady Waitlist App logo" >
+      </a>
+      <h4>Log in to your account</h4>
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+          <label for="Email">Email</label>
+          <input type="email" name="Email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"required>
+          <div class="invalid-feedback">
+            Please enter email in the correct format.
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="pass">Password</label>
+          <input type="password" name="pass" class="form-control" required>
+          <div class="invalid-feedback">
+            Please choose your password.
+          </div>
+        </div>
+        <div class="form-row">
+          <button type="submit" class="login">Log in</button>
+        </div>
+        <div class="form-row ">
+          <!-- <div class="col-md-6"> -->
+            <button type="button" class="google" id="my-signin2" ng-click="onGoogleLogin()">
+              <img src="glogo.png" class="GLogo">
+              Log in with Google
+            </button>
+           <!-- </div>
+         <div class="col-md-6"> -->
+            <!-- <button type="button" class="facebook" ng-click="onFBLogin()">Log in with Facebook</button> -->
+          <!-- </div> -->
+        </div>
+      </form>
+      <div class="d-flex">
+          <a href="signup.html" class="col-md-6">Create an account</a>
+          <a href="" class="col-md-6 d-flex justify-content-end">Forgot password?</a>
+      </div>
+
+      <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+      </script>
+    </div><!--class = container -->
+    <!-- sign in with google -->
+    <script type="text/javascript">
+      (function(){
+        var p = document.createElement('script');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = 'https://apis.google.com/js/client.js?onload=onLoadFunction';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(p, s);
+      })();
+      function onLoadFunction(){
+        gapi.client.setApiKey('AIzaSyDmEU4g_m-XzLpQaFFnungDJz6_ghRG-WI');
+        gapi.client.load('plus', 'v1', function(){});
+      }
+      // sign in with facebook
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '316970576360700',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v7.0',
+          status           :  true
+        });
+        FB.getLoginStatus( function(response) {
+          if ( response.status === 'connected' ){
+            //we are connected
+          }else if ( response.status === 'not_authorized' ){
+            // not authorized
+          }else {
+            //we are not logged into facebook
+          }
+        });
+      };
+    </script>
+    <!-- <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script> -->
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+  </body>
+</html>
